@@ -141,11 +141,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MCommand.cpp" />
+    <ClCompile Include="MMath.cpp" />
     <ClCompile Include="MModule.cpp" />
     <ClCompile Include="MStd.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MCommand.h" />
+    <ClInclude Include="MMath.h" />
     <ClInclude Include="MModule.h" />
     <ClInclude Include="MStd.h" />
   </ItemGroup>

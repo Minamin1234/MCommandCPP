@@ -23,7 +23,7 @@ public:
 	MCommand();
 	void Run();
 	vector<string> DecodeArgs(string words);
-	void IncludeNewModule(MModule newmodule);
+	void IncludeNewModule(MModule *newmodule);
 	void ShowAllModuleCommandInfo();
 	void ShowAllDefaultCommands();
 	void ExeciteCommand(vector<string> args);

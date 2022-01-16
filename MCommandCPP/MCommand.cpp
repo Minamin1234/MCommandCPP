@@ -1,5 +1,8 @@
 #include "MCommand.h"
 
+#include "MStd.h"
+#include "MMath.h"
+
 MCommand::MCommand()
 {
 	this->Initialize();
@@ -9,6 +12,8 @@ void MCommand::Initialize()
 {
 	this->DefaultCommands.push_back("help");
 	this->DefaultCommands.push_back("quit");
+	this->IncludeNewModule(new MStd());
+	this->IncludeNewModule(new MMath());
 }
 
 void MCommand::Run()
