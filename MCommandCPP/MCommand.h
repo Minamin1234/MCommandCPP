@@ -20,6 +20,7 @@ protected:
 public:
 	string Version = "v1.0";
 
+	MCommand();
 	void Run();
 	vector<string> DecodeArgs(string words);
 	void ShowAllModuleCommandInfo();
