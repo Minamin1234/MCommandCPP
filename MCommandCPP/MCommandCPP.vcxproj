@@ -142,6 +142,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MCommand.cpp" />
     <ClCompile Include="MModule.cpp" />
+    <ClCompile Include="MStd.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MCommand.h" />
