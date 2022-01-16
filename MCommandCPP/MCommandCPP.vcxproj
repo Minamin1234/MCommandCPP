@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MCommand.cpp" />
+    <ClCompile Include="MModule.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MCommand.h" />
     <ClInclude Include="MModule.h" />
+    <ClInclude Include="MStd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
