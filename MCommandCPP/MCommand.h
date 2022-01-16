@@ -13,7 +13,7 @@ private:
 protected:
 	vector<MModule> Modules;
 	vector<string> DefaultCommands;
-	char ModuleSprt = ',';
+	char ModuleSprt = '.';
 	char SprtInArgs = ',';
 
 	virtual void Initialize();
@@ -23,8 +23,8 @@ public:
 	MCommand();
 	void Run();
 	vector<string> DecodeArgs(string words);
-	void IncludeNewModule(MModule *newmodule);
+	void IncludeNewModule(MModule newmodule);
 	void ShowAllModuleCommandInfo();
 	void ShowAllDefaultCommands();
-	void ExeciteCommand(vector<string> args);
+	void ExecuteCommand(vector<string> args);
 };

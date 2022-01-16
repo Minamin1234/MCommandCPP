@@ -12,8 +12,8 @@ void MCommand::Initialize()
 {
 	this->DefaultCommands.push_back("help");
 	this->DefaultCommands.push_back("quit");
-	this->IncludeNewModule(new MStd());
-	this->IncludeNewModule(new MMath());
+	this->IncludeNewModule(MStd());
+	this->IncludeNewModule(MMath());
 }
 
 void MCommand::Run()
@@ -21,11 +21,16 @@ void MCommand::Run()
 	while (true)
 	{
 		string cmd;
-		cin >> cmd;
+		getline(cin,cmd);
 		auto args = this->DecodeArgs(cmd);
-		this->ExeciteCommand(args);
+		this->ExecuteCommand(args);
 		if (args[0] == "quit") break;
 	}
+}
+
+void MCommand::IncludeNewModule(MModule newmodule)
+{
+	this->Modules.push_back(newmodule);
 }
 
 vector<string> MCommand::DecodeArgs(string words)
@@ -85,7 +90,7 @@ void MCommand::ShowAllDefaultCommands()
 	}
 }
 
-void MCommand::ExeciteCommand(vector<string> args)
+void MCommand::ExecuteCommand(vector<string> args)
 {
 	cout << "" << endl;
 	if (args[0] == this->DefaultCommands[0])
