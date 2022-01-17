@@ -12,8 +12,8 @@ void MCommand::Initialize()
 {
 	this->DefaultCommands.push_back("help");
 	this->DefaultCommands.push_back("quit");
-	this->IncludeNewModule(MStd());
-	this->IncludeNewModule(MMath());
+	this->IncludeNewModule(new MStd());
+	this->IncludeNewModule(new MMath());
 }
 
 void MCommand::Run()
@@ -28,7 +28,7 @@ void MCommand::Run()
 	}
 }
 
-void MCommand::IncludeNewModule(MModule newmodule)
+void MCommand::IncludeNewModule(MModule *newmodule)
 {
 	this->Modules.push_back(newmodule);
 }
@@ -77,7 +77,7 @@ void MCommand::ShowAllModuleCommandInfo()
 {
 	for (int i = 0; i < this->Modules.size(); i++)
 	{
-		this->Modules[i].ShowHelp();
+		this->Modules[i]->ShowHelp();
 	}
 }
 
@@ -101,9 +101,9 @@ void MCommand::ExecuteCommand(vector<string> args)
 
 	for (int i = 0; i < this->Modules.size(); i++)
 	{
-		if (args[0] == this->Modules[i].ModuleName)
+		if (args[0] == this->Modules[i]->ModuleName)
 		{
-			this->Modules[i].ExecuteCommand(args);
+			this->Modules[i]->ExecuteCommand(args);
 			return;
 		}
 	}

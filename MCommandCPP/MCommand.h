@@ -11,7 +11,7 @@ class MCommand
 {
 private:
 protected:
-	vector<MModule> Modules;
+	vector<MModule*> Modules;
 	vector<string> DefaultCommands;
 	char ModuleSprt = '.';
 	char SprtInArgs = ',';
@@ -23,7 +23,7 @@ public:
 	MCommand();
 	void Run();
 	vector<string> DecodeArgs(string words);
-	void IncludeNewModule(MModule newmodule);
+	void IncludeNewModule(MModule *newmodule);
 	void ShowAllModuleCommandInfo();
 	void ShowAllDefaultCommands();
 	void ExecuteCommand(vector<string> args);
